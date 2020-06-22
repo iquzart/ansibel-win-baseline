@@ -48,7 +48,7 @@
     type: dword
     state: "{{ 'present' if remote_desktop_enabled else 'absent' }}"
   tags:
-    - configuration
+    - rdp
 
 - name: Add User or Group to Login group for Remote Desktop
   win_group_membership:
@@ -74,22 +74,3 @@
   tags:
     - rdp
 
-- name: Disable Shutdown Butten from Windows Start
-  win_regedit:
-    path: HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
-    name: NoClose
-    data: '1'
-    type: dword
-    state: "{{ 'present' if remote_desktop_enabled and remote_desktop_shutdown_disable else 'absent' }}"
-  tags:
-    - rdp
-
-
-- name: Disable Shutdown Butten from Windows login screen
-  win_regedit:
-    path: HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
-    name: shutdownwithoutlogon
-    data: "{{ '0' if remote_desktop_enabled and remote_desktop_shutdown_disable else '1' }}"
-    type: dword
-  tags:
-    - rdp
