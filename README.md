@@ -3,6 +3,15 @@ win-baseline
 
 Ansible role to setup OS baseline on windows
 
+```
+  - Setup Hostname
+  - Set TimeZone
+  - Disable Shutdown Button
+  - Configure RDP
+  - Windows Updates
+
+```
+
 
 Role Variables
 --------------
