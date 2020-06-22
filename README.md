@@ -3,6 +3,10 @@ win-baseline
 
 Ansible role to setup OS baseline on windows
 
+
+Role Features
+-------------
+
 ```
   - Setup Hostname
   - Set TimeZone
@@ -47,6 +51,18 @@ Including an example of how to use your role (for instance, with variables passe
     gather_facts: no 
     roles:
       - role: win-baseline
+```
+
+Features Under development
+--------------------------
+
+```
+  - Password Policy
+  - Audit Logs
+  - Firewall Configuration
+  - Join Domain
+  - Banners
+
 ```
 License
 -------
